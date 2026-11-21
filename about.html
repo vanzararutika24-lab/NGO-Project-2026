@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | NGO</title>
+
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        .about-hero {
+            padding: 65px 7%;
+            background: #eff8f1;
+            text-align: center; 
+        }
+
+        .about-hero p {
+            max-width: 700px;
+            margin: 15px auto 0;
+            color: #536c70;
+        }
+
+        .about-content {
+            max-width: 1100px;
+            margin: 45px auto;
+            padding: 0 25px;
+        }
+
+        .about-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .about-intro img {
+            width: 100%;
+            border-radius: 15px;
+            display: block;
+        }
+
+        .about-intro p {
+            margin-top: 12px;
+            color: #536c70;
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 45px;
+        }
+
+        .about-card {
+            padding: 25px;
+            background: #f6fbf7;
+            border: 1px solid #e0eae4;
+            border-radius: 14px;
+        }
+
+        .about-card h3 {
+            color: #16845c;
+            margin-bottom: 10px;
+        }
+
+        .about-card p {
+            color: #536c70;
+        }
+
+        .about-values {
+            margin-top: 45px;
+            text-align: center;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        @media (max-width: 700px) {
+            .about-hero {
+                padding: 45px 6%;
+            }
+
+            .about-content {
+                margin: 30px auto;
+                padding: 0 18px;
+            }
+
+            .about-intro,
+            .mission-vision,
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-intro {
+                gap: 20px;
+            }
+
+            .mission-vision,
+            .about-values {
+                margin-top: 30px;
+            }
+
+            .about-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="NGO Logo">
+        </a>
+
+        <button class="menu-btn" id="menubtn"
+                aria-label="Open menu" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="index.html#work">Our Work</a>
+            <a href="index.html#events">Events</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="register.html" class="register-btn">Register</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <p class="eyebrow">GET TO KNOW US</p>
+            <h1>About <span>Our NGO</span></h1>
+            <p>
+                We believe that small acts of kindness can create
+                a big difference in the world.
+            </p>
+        </section>
+
+        <section class="about-content">
+
+            <div class="about-intro">
+                <div>
+                    <h2>Who We Are</h2>
+                    <p>
+                        We are a community-focused NGO committed to
+                        supporting people in need, creating opportunities,
+                        and building a better future for everyone.
+                    </p>
+                    <p>
+                        Through community support, volunteering, education,
+                        and awareness, we encourage people to work together
+                        and create positive change.
+                    </p>
+                </div>
+
+                <img
+                    src="images/photo1.avif"
+                    alt="People working together to support their community">
+            </div>
+
+            <div class="mission-vision">
+                <article class="about-card">
+                    <h3>Our Mission</h3>
+                    <p>
+                        To support underprivileged communities, provide
+                        opportunities, and encourage people to contribute
+                        to meaningful social change.
+                    </p>
+                </article>
+
+                <article class="about-card">
+                    <h3>Our Vision</h3>
+                    <p>
+                        To build a caring and inclusive society where
+                        everyone has the opportunity to live with dignity
+                        and hope.
+                    </p>
+                </article>
+            </div>
+
+            <div class="about-values">
+                <h2>Our Core Values</h2>
+                <p>These values guide our work every day.</p>
+
+                <div class="values-grid">
+                    <article class="about-card">
+                        <h3>Compassion</h3>
+                        <p>We care about people and their needs.</p>
+                    </article>
+
+                    <article class="about-card">
+                        <h3>Teamwork</h3>
+                        <p>We believe in working together for change.</p>
+                    </article>
+
+                    <article class="about-card">
+                        <h3>Transparency</h3>
+                        <p>We value honesty, responsibility, and trust.</p>
+                    </article>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <strong>NGO</strong>
+        <p>Together for a Better Tomorrow</p>
+        <p>Small Actions Make a Big Difference.</p>
+    </footer>
+
+    <script src="scrpit.js"></script>
+
+</body>
+</html>

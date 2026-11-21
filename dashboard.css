@@ -1,0 +1,209 @@
+/* ---------- Basic setup ---------- */
+:root {
+  --green: #0b6b3f;
+  --green-dark: #0a4a2d;
+  --green-light: #eaf4ee;
+  --bg: #f6faf7;
+  --white: #ffffff;
+  --text: #17302a;
+  --muted: #6b7f77;
+  --border: #dbe7e0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a { color: inherit; text-decoration: none; }
+h1, h2 { margin: 0 0 4px; }
+h2 { font-size: 21px; color: var(--green-dark); }
+.muted { color: var(--muted); margin: 0 0 14px; }
+
+/* ---------- Header ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 10px 40px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand img { height: 44px; border-radius: 6px; }
+.brand strong { display: block; font-size: 24px; color: var(--green-dark); line-height: 1; }
+.brand small { color: var(--muted); font-size: 12px; }
+
+nav { display: flex; gap: 26px; margin: 0 auto; flex-wrap: wrap; }
+nav a { color: var(--muted); font-weight: 500; padding: 6px 0; }
+nav a.active { color: var(--green); font-weight: 700; border-bottom: 2px solid var(--green); }
+
+.user { display: flex; align-items: center; gap: 12px; }
+.avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--green); color: #fff;
+  display: grid; place-items: center; font-weight: 700;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 9px 20px;
+  border-radius: 8px;
+  border: 1.5px solid var(--green);
+  font: 600 14px "Segoe UI", Arial, sans-serif;
+  cursor: pointer;
+}
+.btn.outline { background: none; color: var(--green); }
+.btn.solid { background: var(--green); color: #fff; }
+.btn.solid.light { background: #fff; color: var(--green-dark); border-color: #fff; }
+.btn.full { width: 100%; margin-top: 12px; }
+.btn:hover { opacity: .9; }
+
+/* ---------- Layout ---------- */
+main { max-width: 1250px; margin: 0 auto; padding: 24px 40px 40px; }
+
+.banner {
+  min-height: 220px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, #0a4a2d 38%, rgba(10,74,45,.5) 65%, rgba(10,74,45,0)),
+    url("images/hero.jpg") right center / cover no-repeat;
+}
+.banner-text { padding: 30px 40px; max-width: 580px; color: #fff; }
+.banner h1 { font-size: 34px; }
+.banner p { margin: 0 0 18px; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+.stat {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.stat strong { display: block; font-size: 26px; color: var(--green-dark); }
+.stat span { color: var(--muted); font-size: 13px; }
+
+.layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 24px; }
+
+.panel {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+/* ---------- Impact cards ---------- */
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.card img { width: 100%; height: 90px; object-fit: cover; display: block; }
+.card-body { padding: 12px 14px; }
+.card h3 { margin: 0; font-size: 16px; }
+.card p { margin: 2px 0 8px; color: var(--muted); font-size: 13px; }
+.tag {
+  display: inline-block;
+  background: var(--green-light);
+  color: var(--green);
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ---------- Table ---------- */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 10px 6px; border-top: 1px solid var(--border); }
+th { color: var(--muted); font-weight: 600; border-top: 0; }
+td button { background: none; border: 0; color: var(--green); font: inherit; cursor: pointer; padding: 0; }
+td button:hover { text-decoration: underline; }
+
+/* ---------- Donate form ---------- */
+.chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.chips button {
+  border: 1.5px solid var(--green);
+  background: none;
+  color: var(--green);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font: 600 14px "Segoe UI", Arial, sans-serif;
+  cursor: pointer;
+}
+.chips button.selected { background: var(--green); color: #fff; }
+
+input, select {
+  width: 100%;
+  padding: 9px 10px;
+  margin-bottom: 10px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+}
+.message { min-height: 20px; margin: 10px 0 0; font-size: 13px; color: var(--green); }
+.message.error { color: #b3261e; }
+
+.clock { font-size: 28px; font-weight: 700; color: var(--green-dark); margin: 0; }
+
+footer { background: #0d3d2a; color: #cfe3d9; text-align: center; padding: 18px; font-size: 13px; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .topbar, main { padding-left: 16px; padding-right: 16px; }
+  nav { margin: 0; }
+}
+
+/* ---------- User dashboard extras ---------- */
+.actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.action {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+.action strong { display: block; color: var(--green-dark); }
+.action small { color: var(--muted); }
+
+.row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.btn.small { padding: 5px 14px; }
+.btn.solid.done { background: var(--green-light); color: var(--green); }
+
+.bar { height: 10px; background: var(--green-light); border-radius: 6px; overflow: hidden; margin: 8px 0 4px; }
+.bar div { height: 100%; width: 0; background: var(--green); transition: width .4s; }
+.small-text { font-size: 13px; color: var(--muted); }
+.panel .btn.full + .btn.full { margin-top: 10px; }
+
+/* ---------- Volunteer dashboard extras ---------- */
+.task { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; border-top: 1px solid var(--border); cursor: pointer; }
+.task:first-of-type { border-top: 0; }
+.task input { width: 17px; height: 17px; margin: 3px 0 0; accent-color: var(--green); flex: none; }
+.task.done span { text-decoration: line-through; color: var(--muted); }
+.badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.badges span { background: var(--green-light); color: var(--green); border-radius: 10px; padding: 6px 12px; font-size: 13px; font-weight: 600; }
+.badges span.locked { background: #eef0ee; color: #9aa7a1; }
+.empty { color: var(--muted); margin: 0 0 14px; }
+
+/* ---------- Combined project extras ---------- */
+a.action { display: block; }
+a.action:hover { border-color: var(--green); }
+.topbar nav a:hover { color: var(--green); }

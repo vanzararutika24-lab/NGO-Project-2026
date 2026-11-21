@@ -1,0 +1,85 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e8f3ec;
+  margin: 0;
+  padding: 20px;
+}
+ 
+.logo-box {
+  text-align: center;
+  margin-bottom: 10px;
+}
+ 
+.logo-box img {
+  width: 250px;
+}
+ 
+.box {
+  background-color: white;
+  width: 340px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+ 
+.box h2 {
+  text-align: center;
+  color: #16845c;
+  margin-top: 0;
+}
+ 
+.box input, .box select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+ 
+.box button {
+  width: 100%;
+  padding: 10px;
+  background-color: #16845c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+ 
+.box button:hover {
+  background-color: #0f6646;
+}
+ 
+.error {
+  color: red;
+  font-size: 13px;
+  margin: 0 0 10px 0;
+}
+ 
+.small {
+  text-align: center;
+  font-size: 13px;
+}
+ 
+.small a {
+  color: #16845c;
+}
+ 
+nav button {
+  background-color: white;
+  color: #16845c;
+  border: 1px solid #16845c;
+  padding: 10px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+nav button:hover {
+  background-color: #e8f3ec;
+  color: #16845c;
+}

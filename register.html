@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NGO - Register</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+  <div class="logo-box">
+    <img src="logo.png" alt="NGO logo">
+  </div>
+ 
+  <div class="box">
+    <h2>Register</h2>
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="text" id="email" placeholder="Email">
+    <input type="text" id="mobile" placeholder="Mobile Number">
+    <input type="password" id="password" placeholder="Password">
+    <input type="password" id="confirmPassword" placeholder="Confirm Password">
+ 
+    <select id="role">
+      <option value="User">User</option>
+      <option value="Volunteer">Volunteer</option>
+      <option value="Donor">Donor</option>
+      
+    </select>
+ 
+    <p class="error" id="registerError"></p>
+    <button onclick="registerUser()">Register</button>
+    <p class="small">Already have an account? <a href="login.html">Login</a></p>
+  </div>
+ 
+ <script src="scrpit.js"></script>
+</body>
+</html>
+ 

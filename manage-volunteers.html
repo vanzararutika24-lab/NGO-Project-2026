@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Volunteers - NGO</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7f5;
+            margin: 0;
+            color: #333;
+        }
+
+        header {
+            background: #16845c;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .application {
+            background: white;
+            padding: 20px;
+            margin-bottom: 18px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #ddd;
+        }
+
+        .application h3 {
+            color: #16845c;
+        }
+
+        .application p {
+            overflow-wrap: anywhere;
+            line-height: 1.5;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px 5px 0 0;
+        }
+
+        .approve {
+            background: #16845c;
+            color: white;
+        }
+
+        .reject {
+            background: #c0392b;
+            color: white;
+        }
+
+        .back {
+            background: white;
+            color: #16845c;
+        }
+
+        #applications {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>Manage Volunteers</h2>
+    <button class="back" onclick="history.back()">Back</button>
+</header>
+
+<div class="container">
+    <h2>Volunteer Applications</h2>
+    <p>Review volunteer applications and update their status.</p>
+
+    <div id="applications"></div>
+</div>
+
+<script>
+    // Only allow an admin who has logged in
+    if (localStorage.getItem("adminLoggedIn") !== "true") {
+        window.location.href = "admin.html";
+    }
+
+    function showApplications() {
+        var applications = JSON.parse(
+            localStorage.getItem("volunteerApplications") || "[]"
+        );
+
+        var container = document.getElementById("applications");
+        container.innerHTML = "";
+
+        if (applications.length === 0) {
+            container.textContent = "No volunteer applications yet.";
+            return;
+        }
+
+        applications.forEach(function(app, index) {
+            var card = document.createElement("div");
+            card.className = "application";
+
+            var title = document.createElement("h3");
+            title.textContent = app.name;
+
+            var details = document.createElement("p");
+            details.textContent =
+                "Email: " + app.email +
+                " | Mobile: " + app.mobile +
+                " | Interest: " + app.area +
+                " | Availability: " + app.availability;
+
+            var reason = document.createElement("p");
+            reason.textContent = "Reason: " + app.reason;
+
+            var status = document.createElement("p");
+            status.textContent = "Status: " + (app.status || "Pending");
+
+            card.appendChild(title);
+            card.appendChild(details);
+            card.appendChild(reason);
+            card.appendChild(status);
+
+            if (!app.status || app.status === "Pending") {
+                var approveBtn = document.createElement("button");
+                approveBtn.className = "approve";
+                approveBtn.textContent = "Approve";
+                approveBtn.onclick = function() {
+                    updateStatus(index, "Approved");
+                };
+
+                var rejectBtn = document.createElement("button");
+                rejectBtn.className = "reject";
+                rejectBtn.textContent = "Reject";
+                rejectBtn.onclick = function() {
+                    updateStatus(index, "Rejected");
+                };
+
+                card.appendChild(approveBtn);
+                card.appendChild(rejectBtn);
+            }
+
+            container.appendChild(card);
+        });
+    }
+
+    function updateStatus(index, newStatus) {
+        var applications = JSON.parse(
+            localStorage.getItem("volunteerApplications") || "[]"
+        );
+
+        applications[index].status = newStatus;
+
+        localStorage.setItem(
+            "volunteerApplications",
+            JSON.stringify(applications)
+        );
+
+        showApplications();
+    }
+
+    showApplications();
+</script>
+
+</body>
+</html>
